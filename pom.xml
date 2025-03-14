@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.epam.ta</groupId>
-	<artifactId>github-automation</artifactId>
+	<artifactId>swaglab-automation</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0</version>
-	<name>GitHubAutomation</name>
+	<name>SwagLabsAutomation</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,6 +47,12 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.11.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.1</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
     <build>

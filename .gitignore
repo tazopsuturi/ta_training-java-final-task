@@ -13,6 +13,11 @@ test-output/
 .project
 .settings/
 
+logs/
+resources/
+
+testdata.properties
+github-automation.iml
 # Idea
 .idea/
 *.iml

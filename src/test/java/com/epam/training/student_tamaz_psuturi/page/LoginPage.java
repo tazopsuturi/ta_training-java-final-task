@@ -1,5 +1,6 @@
 package com.epam.training.student_tamaz_psuturi.page;
 
+import com.epam.training.student_tamaz_psuturi.model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -21,13 +22,30 @@ public class LoginPage extends AbstractPage{
 	@FindBy(id = "login-button")
 	private WebElement buttonLogin;
 	
-	protected LoginPage(WebDriver driver) {
+	@FindBy(xpath = "//h3[@data-test='error']")
+	private WebElement errorMessage;
+	
+	public LoginPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
 	}
 	
 	@Override
-	protected AbstractPage openPage() {
-		return null;
+	public LoginPage openPage() {
+		driver.navigate().to(LOGIN_PAGE_URL);
+		logger.info("Login page opened");
+		return this;
+	}
+	
+	public LoginPage login(User user) {
+		inputUsername.sendKeys(user.getUsername());
+		inputPassword.sendKeys(user.getPassword());
+		buttonLogin.click();
+		logger.info("Login performed");
+		return this;
+	}
+	
+	public String userNameString() {
+		return inputUsername.getText();
 	}
 }
