@@ -13,13 +13,13 @@ public class LoginPage extends AbstractPage{
 	private final Logger logger = LogManager.getRootLogger();
 	private final String LOGIN_PAGE_URL = "https://www.saucedemo.com/";
 	
-	@FindBy(id = "user-name")
+	@FindBy(xpath = "//input[contains(@class, 'input_error') and @type='text']")
 	private WebElement inputUsername;
 	
-	@FindBy(id = "password")
+	@FindBy(xpath = "//input[contains(@class, 'input_error') and @type='password']")
 	private WebElement inputPassword;
 	
-	@FindBy(id = "login-button")
+	@FindBy(xpath = "//input[@class='submit-button btn_action']")
 	private WebElement buttonLogin;
 	
 	@FindBy(xpath = "//h3[@data-test='error']")
