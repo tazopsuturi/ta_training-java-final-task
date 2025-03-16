@@ -24,5 +24,4 @@ public class CommonConditions {
 	{
 		DriverSingleton.closeBrowser();
 	}
-	
 }
