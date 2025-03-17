@@ -1,11 +1,10 @@
 package com.epam.training.student_tamaz_psuturi.test;
 
-
 import com.epam.training.student_tamaz_psuturi.driver.DriverSingleton;
 import com.epam.training.student_tamaz_psuturi.utils.TestListener;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.junit.After;
+import org.junit.Before;
 import org.testng.annotations.Listeners;
 
 @Listeners({TestListener.class})
@@ -13,13 +12,13 @@ public class CommonConditions {
 
 	protected WebDriver driver;
 	
-	@BeforeMethod()
+	@Before()
 	public void setUp()
 	{
 		driver = DriverSingleton.getDriver();
 	}
 	
-	@AfterMethod(alwaysRun = true)
+	@After()
 	public void stopBrowser()
 	{
 		DriverSingleton.closeBrowser();

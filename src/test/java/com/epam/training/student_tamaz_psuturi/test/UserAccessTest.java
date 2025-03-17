@@ -3,8 +3,8 @@ package com.epam.training.student_tamaz_psuturi.test;
 import com.epam.training.student_tamaz_psuturi.model.User;
 import com.epam.training.student_tamaz_psuturi.page.LoginPage;
 import com.epam.training.student_tamaz_psuturi.service.UserCreator;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class UserAccessTest extends CommonConditions {
 	@Test
@@ -13,7 +13,7 @@ public class UserAccessTest extends CommonConditions {
 		String loggedInUserName = new LoginPage(driver)
 				.openPage()
 				.login(testUser)
-				.userNameString();
-		Assert.assertEquals(loggedInUserName, testUser.getUsername());
+				.getPageTitle();
+		Assert.assertEquals(loggedInUserName, "Swag Labs");
 	}
 }
