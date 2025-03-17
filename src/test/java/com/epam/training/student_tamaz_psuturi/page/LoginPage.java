@@ -7,6 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage extends AbstractPage {
 	
@@ -52,5 +56,11 @@ public class LoginPage extends AbstractPage {
 	
 	public String userNameString() {
 		return inputUsername.getText();
+	}
+	
+	public String errorMessageString() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIMEOUT_SECONDS));
+		wait.until(ExpectedConditions.visibilityOf(errorMessage));
+		return errorMessage.getText();
 	}
 }
