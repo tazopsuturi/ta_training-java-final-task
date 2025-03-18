@@ -3,7 +3,8 @@ package com.epam.training.student_tamaz_psuturi.test;
 import com.epam.training.student_tamaz_psuturi.model.User;
 import com.epam.training.student_tamaz_psuturi.page.LoginPage;
 import com.epam.training.student_tamaz_psuturi.service.UserCreator;
-import org.junit.Assert;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import org.junit.Test;
 
 public class AccessWithoutUserNameTest extends CommonConditions {
@@ -18,6 +19,6 @@ public class AccessWithoutUserNameTest extends CommonConditions {
 				.clearPassword()
 				.clickLoginButton()
 				.errorMessageString();
-		Assert.assertTrue(usernameError.contains("Username is required"));
+		assertThat(usernameError,containsString("Username is required"));
 	}
 }
