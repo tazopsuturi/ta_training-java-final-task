@@ -6,15 +6,14 @@ import com.epam.training.student_tamaz_psuturi.service.UserCreator;
 import org.junit.Assert;
 import org.junit.Test;
 
-
-public class AccessWithoutUserNameTest extends CommonConditions{
+public class AccessWithoutPasswordTest extends CommonConditions {
 	@Test
-	public void loginWithoutUserName() {
-		User testUser = UserCreator.withEmptyUsername();
-		String usernameError = new LoginPage(driver)
+	public void loginWithoutPassword() {
+		User testUser = UserCreator.withEmptyPassword();
+		String passwordError = new LoginPage(driver)
 				.openPage()
 				.loginWithValidData(testUser)
 				.errorMessageString();
-		Assert.assertTrue(usernameError.contains("Password is required"));
+		Assert.assertTrue(passwordError.contains("Password is required"));
 	}
 }
