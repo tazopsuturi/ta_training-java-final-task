@@ -20,8 +20,8 @@ public class LoginPageSteps {
 	private WebDriver driver;
 	private LoginPage loginPage;
 	
-	public LoginSteps() {
-		this.driver = DriverSingleton.getDriver(); // Use Singleton for consistency
+	public LoginPageSteps() {
+		this.driver = DriverSingleton.getDriver();
 		this.loginPage = new LoginPage(driver);
 	}
 	
@@ -52,13 +52,13 @@ public class LoginPageSteps {
 	
 	@And("I click on the login button")
 	public void iClickOnTheLoginButton() {
-		loginPage.login();
+		loginPage.clickLoginButton();
 	}
 	
 	@Then("I should see an error message {string}")
 	public void iShouldSeeAnErrorMessage(String expectedMessage) {
-		Assert.assertEquals(expectedMessage, loginPage.getErrorMessage());
+		Assert.assertEquals(expectedMessage, loginPage.errorMessageString());
 		driver.quit();
 	}
 }
-}
+

@@ -12,8 +12,11 @@ public class AccessWithoutPasswordTest extends CommonConditions {
 		User testUser = UserCreator.withEmptyPassword();
 		String passwordError = new LoginPage(driver)
 				.openPage()
-				.loginWithValidData(testUser)
+				.enterUsername(testUser.getUsername())
+				.enterPassword(testUser.getPassword())
+				.clickLoginButton()
 				.errorMessageString();
+		
 		Assert.assertTrue(passwordError.contains("Password is required"));
 	}
 }

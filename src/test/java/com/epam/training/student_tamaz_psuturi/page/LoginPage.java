@@ -41,16 +41,30 @@ public class LoginPage extends AbstractPage {
 		return this;
 	}
 	
-	public LoginPage loginWithValidData(User user) {
-		inputUsername.sendKeys(user.getUsername());
-		inputPassword.sendKeys(user.getPassword());
+	public LoginPage enterUsername(String username) {
+		inputUsername.clear();
+		inputUsername.sendKeys(username);
+		logger.info("Entered username: " + username);
+		return this;
+	}
+	
+	public LoginPage enterPassword(String password) {
+		inputPassword.clear();
+		inputPassword.sendKeys(password);
+		logger.info("Entered password");
+		return this;
+	}
+	
+	public LoginPage clickLoginButton() {
 		buttonLogin.click();
-		logger.info("Login performed");
+		logger.info("Clicked login button");
 		return this;
 	}
 	
 	public MainPage login(User user) {
-		loginWithValidData(user);
+		enterUsername(user.getUsername());
+		enterPassword(user.getPassword());
+		buttonLogin.click();
 		return new MainPage(driver);
 	}
 	

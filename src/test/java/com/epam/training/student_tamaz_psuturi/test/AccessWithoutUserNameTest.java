@@ -13,7 +13,9 @@ public class AccessWithoutUserNameTest extends CommonConditions{
 		User testUser = UserCreator.withEmptyUsername();
 		String usernameError = new LoginPage(driver)
 				.openPage()
-				.loginWithValidData(testUser)
+				.enterUsername(testUser.getUsername())
+				.enterPassword(testUser.getPassword())
+				.clickLoginButton()
 				.errorMessageString();
 		Assert.assertTrue(usernameError.contains("Password is required"));
 	}
