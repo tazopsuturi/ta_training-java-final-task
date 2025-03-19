@@ -59,8 +59,8 @@ public class LoginPage extends AbstractPage {
 	}
 	
 	public String errorMessageString() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIMEOUT_SECONDS));
-		wait.until(ExpectedConditions.visibilityOf(errorMessage));
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIMEOUT_SECONDS));
+//		wait.until(ExpectedConditions.visibilityOf(errorMessage));
 		return errorMessage.getText();
 	}
 }
