@@ -54,13 +54,7 @@ public class LoginPage extends AbstractPage {
 		return new MainPage(driver);
 	}
 	
-	public String userNameString() {
-		return inputUsername.getText();
-	}
-	
 	public String errorMessageString() {
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIMEOUT_SECONDS));
-//		wait.until(ExpectedConditions.visibilityOf(errorMessage));
 		return errorMessage.getText();
 	}
 }
