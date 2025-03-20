@@ -42,16 +42,24 @@ public class LoginPage extends AbstractPage {
 	}
 	
 	public LoginPage enterUsername(String username) {
-		inputUsername.clear();
 		inputUsername.sendKeys(username);
 		logger.info("Entered username: " + username);
 		return this;
 	}
 	
+	public LoginPage clearUserName() {
+		inputUsername.clear();
+		return this;
+	}
+	
 	public LoginPage enterPassword(String password) {
-		inputPassword.clear();
 		inputPassword.sendKeys(password);
 		logger.info("Entered password");
+		return this;
+	}
+	
+	public LoginPage clearPassword() {
+		inputPassword.clear();
 		return this;
 	}
 	

@@ -15,8 +15,10 @@ public class AccessWithoutUserNameTest extends CommonConditions{
 				.openPage()
 				.enterUsername(testUser.getUsername())
 				.enterPassword(testUser.getPassword())
+				.clearUserName()
+				.clearPassword()
 				.clickLoginButton()
 				.errorMessageString();
-		Assert.assertTrue(usernameError.contains("Password is required"));
+		Assert.assertTrue(usernameError.contains("Username is required"));
 	}
 }

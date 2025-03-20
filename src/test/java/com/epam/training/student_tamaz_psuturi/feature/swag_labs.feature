@@ -1,20 +1,17 @@
 Feature: User Login
 
-  @smoke @positive
   Scenario: Successful login with valid credentials
     Given I open the login page
     When I enter valid username and password
     And I click on the login button
     Then I should be logged in successfully
 
-  @smoke @negative
   Scenario: Login attempt with an empty username
     Given I open the login page
     When I enter an empty username and a valid password
     And I click on the login button
     Then I should see an error message "Username is required"
 
-  @negative
   Scenario: Login attempt with an empty password
     Given I open the login page
     When I enter a valid username and an empty password

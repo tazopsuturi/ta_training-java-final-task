@@ -14,6 +14,7 @@ public class AccessWithoutPasswordTest extends CommonConditions {
 				.openPage()
 				.enterUsername(testUser.getUsername())
 				.enterPassword(testUser.getPassword())
+				.clearPassword()
 				.clickLoginButton()
 				.errorMessageString();
 		
