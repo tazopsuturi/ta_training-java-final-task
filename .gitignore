@@ -14,9 +14,8 @@ test-output/
 .settings/
 
 logs/
-resources/
+allure.properties
 
-testdata.properties
 github-automation.iml
 # Idea
 .idea/
