@@ -5,8 +5,10 @@ import com.epam.training.student_tamaz_psuturi.page.LoginPage;
 import com.epam.training.student_tamaz_psuturi.service.UserCreator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
+
 import org.junit.Test;
 
 public class UserAccessTest extends CommonConditions {

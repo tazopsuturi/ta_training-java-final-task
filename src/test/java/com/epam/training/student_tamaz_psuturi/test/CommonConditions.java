@@ -9,18 +9,16 @@ import org.testng.annotations.Listeners;
 
 @Listeners({TestListener.class})
 public class CommonConditions {
-
+	
 	protected WebDriver driver;
 	
 	@Before()
-	public void setUp()
-	{
+	public void setUp() {
 		driver = DriverSingleton.getDriver();
 	}
 	
 	@After()
-	public void stopBrowser()
-	{
+	public void stopBrowser() {
 		DriverSingleton.closeBrowser();
 	}
 }

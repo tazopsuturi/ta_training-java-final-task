@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class MainPage extends AbstractPage{
+public class MainPage extends AbstractPage {
 	private final Logger logger = LogManager.getRootLogger();
 	private static final String MAIN_PAGE_URL = "https://www.saucedemo.com/inventory.html";
-
+	
 	public MainPage(WebDriver driver) {
 		super(driver);
 	}

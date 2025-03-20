@@ -9,8 +9,6 @@ public class MainPageSteps {
 	private WebDriver driver;
 	private MainPage mainPage;
 	
-	
-	
 	@Then("I should be logged in successfully")
 	public void iShouldBeLoggedInSuccessfully() {
 		Assert.assertEquals("Swag Labs", mainPage.getPageTitle());

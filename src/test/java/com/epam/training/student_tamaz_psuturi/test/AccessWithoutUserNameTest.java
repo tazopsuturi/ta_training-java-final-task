@@ -6,8 +6,7 @@ import com.epam.training.student_tamaz_psuturi.service.UserCreator;
 import org.junit.Assert;
 import org.junit.Test;
 
-
-public class AccessWithoutUserNameTest extends CommonConditions{
+public class AccessWithoutUserNameTest extends CommonConditions {
 	@Test
 	public void loginWithoutUserName() {
 		User testUser = UserCreator.withEmptyUsername();
