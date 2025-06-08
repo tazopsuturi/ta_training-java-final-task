@@ -10,8 +10,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+
+import static org.testng.Assert.assertEquals;
 
 public class LoginPageSteps {
 	private final Logger logger = LogManager.getRootLogger();
@@ -55,7 +56,7 @@ public class LoginPageSteps {
 	
 	@Then("I should see an error message {string}")
 	public void iShouldSeeAnErrorMessage(String expectedMessage) {
-		Assert.assertEquals(expectedMessage, loginPage.errorMessageString());
+		assertEquals(expectedMessage, loginPage.errorMessageString());
 		driver.quit();
 	}
 }
